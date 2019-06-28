@@ -1,12 +1,5 @@
 # import static_data
 import datetime
-import gzip
-import json
-import os
-import urllib.request
-from io import StringIO
-from urllib.parse import urlparse
-
 import httplib2
 from apiclient import discovery
 from oauth2client import client, tools
