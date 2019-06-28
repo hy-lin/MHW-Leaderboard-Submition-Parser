@@ -230,21 +230,18 @@ class run(object):
             f.write('---')
 
 
-def getEntries(service):
+def processRuns(service):
     entries_from_spreadsheet = readEntriesSpreadsheet(service)
-    print(entries_from_spreadsheet)
     spreadsheet_headers = headers(entries_from_spreadsheet[0])
 
 
     for i, row in enumerate(entries_from_spreadsheet):
         if i == 0:
             continue
-        print(row)
         run(row, spreadsheet_headers).output2File()
 
     return spreadsheet_headers
 
 
 service = getService()
-entries = getEntries(service)
-print(entries)
+processRuns(service)
